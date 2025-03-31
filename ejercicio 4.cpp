@@ -4,6 +4,7 @@ using namespace std;
 int main()
 {
     float d, altura, ganancia,saltos,aumenta;
+    int contador=0;
     
     cout<<"Ingrese la distancia: "<<endl;
     cin>>d;
@@ -11,20 +12,23 @@ int main()
     cin>>altura;
       cout<<"Ingrese la ganancia: "<<endl;
     cin>>ganancia;
-    ganancia= ganancia *0.01;
     
     if(d>altura){
         saltos = 1;
+        cout<<"Nro salto    altura "<<endl;
+        cout<<saltos<<"            "<<altura<<endl;
         while (d>altura){
-            cout<<"El numero de saltos" <<endl<<saltos<<" altura "<<endl<<altura;
             saltos = saltos+1;
-            aumenta = altura + ganancia;
+            aumenta = altura*ganancia;
             altura = altura + aumenta;
+            cout<<saltos<<"            "<<altura<<endl;
+            contador = contador + 1;
         }
+
+        cout<<"El numero de saltos es: "<<contador<<endl;
     }
         else {
-          cout<<"xd ";   
-            
+            cout<<"El salto es menor que la distancia"<<endl; 
         }
     
     return 0 ; 
